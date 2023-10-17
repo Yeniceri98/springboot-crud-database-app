@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Employee Form</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+</head>
+<body>
+
+    <h2>Save Employee</h2><br>
+
+    <form
+            action="#"
+            th:action="@{/employees/save}"
+            th:object="${employee}"
+            method="POST">
+
+        <!-- Add hidden form field to handle UPDATE -->
+        <input type="hidden" th:field="*{id}" />
+
+        <input type="text" th:field="*{firstName}" placeholder="First name" class="form-control mb-4 col-4">
+        <input type="text" th:field="*{lastName}" placeholder="Last name" class="form-control mb-4 col-4">
+        <input type="text" th:field="*{email}" placeholder="Email" class="form-control mb-4 col-4">
+
+        <button type="submit" class="btn btn-info col-2">Save</button>
+    </form><hr>
+
+    <a th:href="@{/employees/list}">Back to Employees List</a>
+
+</body>
+</html>
+
+
+<!--
+    <form
+            action="#"                          ->  Empty place holder. Thymeleaf will handle real work
+            th:action="@{employees/save}"       ->  Real work. Send form data to /employees/save
+            th:object="${employee}"             ->  Our model attribute which has been declared in controller
+            method="POST">
+    </form>
+-->
+<!--
+    DATA BINDING
+    When form is loaded (input fields)     ->  employee.getFirstName(...), employee.getLastName(...)
+    When form is submitted (save button)   ->  employee.setFirstName(...), employee.setLastName(...)
+-->
