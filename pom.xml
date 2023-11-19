@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.demo</groupId>
-	<artifactId>Thymeleaf-SpringDataJPA-CRUD-Database-App</artifactId>
+	<artifactId>springboot-crud-database-app</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>Thymeleaf-SpringDataJPA-CRUD-Database-App</name>
-	<description>Demo project for Spring Boot Thymeleaf CRUD Database App</description>
+	<name>springboot-crud-database-app</name>
+	<description>Spring Boot CRUD Database App</description>
 	<properties>
 		<java.version>17</java.version>
 	</properties>
